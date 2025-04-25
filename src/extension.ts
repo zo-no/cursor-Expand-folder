@@ -9,7 +9,7 @@ export function activate(context: vscode.ExtensionContext) {
     console.log('Congratulations, your extension "cursor-expand-folder" is now active!,cursor-expand-folder已激活');
 
     /**
-     * 递归地尝试显示（Reveal）一个文件夹及其指定层级的子文件夹
+     * 递归 尝试显示（Reveal）一个文件夹及其指定层级的子文件夹
      * @param folderUri 要显示的文件夹的 URI
      * @param depth 要递归显示的层级深度
      */
@@ -24,7 +24,7 @@ export function activate(context: vscode.ExtensionContext) {
 
             // 2. 读取当前文件夹的子项
             const entries = await vscode.workspace.fs.readDirectory(folderUri);
-
+            
             // 3. 遍历子项
             for (const [name, type] of entries) {
                 if (type === vscode.FileType.Directory) {
@@ -59,9 +59,6 @@ export function activate(context: vscode.ExtensionContext) {
              vscode.window.showInformationMessage('快捷键操作无法可靠获取选中项，请使用【右键菜单】中的 "Expand Folder Recursively" 功能。');
              return; // 中止执行
          }
-        // --- 修改结束 ---
-
-
         // 定义递归显示的层级深度
         const expansionDepth = 99; // 保持较大的深度
 
@@ -88,6 +85,7 @@ export function activate(context: vscode.ExtensionContext) {
             return;
         }
 
+        // 显示进度条
         vscode.window.withProgress({
             location: vscode.ProgressLocation.Notification,
             title: "正在处理文件夹展开...",

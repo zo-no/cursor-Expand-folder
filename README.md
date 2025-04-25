@@ -31,7 +31,7 @@
    - 右键点击，选择 "Expand Folder Recursively"
    - 插件会自动递归展开所选文件夹
 
-2. 快捷键方式
+2. 快捷键方式(由于 api能力限制，无法使用快捷键，未来可能开放)
    - Mac: `cmd+alt+e`
    - Windows/Linux: `ctrl+alt+e`
    - 注意：由于 VS Code API 限制，快捷键方式需要先在文件浏览器中选中文件夹

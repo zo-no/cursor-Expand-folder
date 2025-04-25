@@ -18,7 +18,8 @@
     "commands": [
       {
         "command": "cursorUtils.expandRecursively",
-        "title": "Expand Folder Recursively"
+        "title": "Expand Folder Recursively",
+        "category": "my-extension"
       }
     ],
     "keybindings": [
