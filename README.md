@@ -56,7 +56,7 @@
 1. 克隆仓库
 
 ```bash
-git clone https://github.com/your-username/cursor-expand-folder.git
+git clone https://github.com/zo-no/cursor-Expand-folder.git
 ```
 
 2. 安装依赖
