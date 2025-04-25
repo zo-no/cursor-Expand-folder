@@ -1,0 +1,59 @@
+{
+  "name": "cursor-expand-folder",
+  "displayName": "Cursor Expand Selected Folders",
+  "description": "Recursively expands selected folders in the explorer view.",
+  "version": "0.0.1",
+  "publisher": "zono", 
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:cursorUtils.expandRecursively"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cursorUtils.expandRecursively",
+        "title": "Expand Folder Recursively"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "cursorUtils.expandRecursively",
+        "key": "cmd+alt+e",
+        "mac": "cmd+alt+e",
+        "when": "explorerResourceIsFolder && filesExplorerFocus || explorerResourceIsFolder && explorerViewletFocus"
+      },
+      {
+        "command": "cursorUtils.expandRecursively",
+        "key": "ctrl+alt+e",
+        "win": "ctrl+alt+e",
+        "linux": "ctrl+alt+e",
+        "when": "explorerResourceIsFolder && filesExplorerFocus || explorerResourceIsFolder && explorerViewletFocus"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "explorerResourceIsFolder",
+          "command": "cursorUtils.expandRecursively",
+          "group": "navigation@1" 
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "18.x",
+    "typescript": "^5.0.0"
+  }
+}

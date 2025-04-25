@@ -1,0 +1,24 @@
+    // tsconfig.json
+    {
+        "compilerOptions": {
+          "module": "commonjs",
+          "target": "es2020", // 确保目标版本支持 async/await
+          "outDir": "out",
+          "lib": [
+            "es2020"
+          ],
+          "sourceMap": true, // 在编译时生成对应的 .js.map 映射文件，用于将运行时调试信息映射回 TypeScript 源码，方便断点调试
+          "strict": true,
+          "rootDir": "src",
+          "esModuleInterop": true, // 允许默认导入 CommonJS 模块
+          "skipLibCheck": true, // 跳过库文件检查
+          "forceConsistentCasingInFileNames": true // 强制文件名大小写一致
+        },
+        "include": [
+          "src/**/*" // 只编译 src 目录下的 ts 文件
+        ],
+        "exclude": [
+          "node_modules",
+          ".vscode-test"
+        ]
+      }
